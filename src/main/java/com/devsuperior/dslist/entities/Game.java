@@ -14,9 +14,12 @@ public class Game {
     @Column(name = "game_year")
     private Integer year;
     private String genre;
-    private String paltform;
+    private String platforms;
+    private Double score;
     private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game(){}
@@ -37,8 +40,8 @@ public class Game {
         return genre;
     }
 
-    public String getPaltform() {
-        return paltform;
+    public String getPlatforms() {
+        return platforms;
     }
 
     public String getImgUrl() {
@@ -53,6 +56,9 @@ public class Game {
         return longDescription;
     }
 
+    public Double getScore() {
+        return score;
+    }
     public void setId(final Long id) {
         this.id = id;
     }
@@ -69,8 +75,8 @@ public class Game {
         this.genre = genre;
     }
 
-    public void setPaltform(final String paltform) {
-        this.paltform = paltform;
+    public void setPlatforms(final String platforms) {
+        this.platforms = platforms;
     }
 
     public void setImgUrl(final String imgUrl) {
@@ -85,16 +91,21 @@ public class Game {
         this.longDescription = longDescription;
     }
 
-    //#TODO: usar builder/dto
-    public Game(final Long id, final String title, final Integer year, final String genre, final String paltform, final String imgUrl, final String shortDescription, final String longDescription) {
+    public void setScore(Double score) {
+        this.score = score;
+    }
+
+    //TODO: usar builder/dto
+    public Game(final Long id, final String title, final Integer year, final String genre, final String platforms, final String imgUrl, final String shortDescription, final String longDescription, final Double score) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.paltform = paltform;
+        this.platforms = platforms;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
+        this.score = score;
     }
 
     @Override
