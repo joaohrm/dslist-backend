@@ -1,10 +1,7 @@
 package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entities.Game;
-import jakarta.persistence.Column;
-
-import java.lang.module.ModuleDescriptor;
-import java.util.Locale;
+import com.devsuperior.dslist.projections.GameMinProjection;
 
 public class GameSimplificadoDto {
 
@@ -18,6 +15,14 @@ public class GameSimplificadoDto {
     }
 
     public GameSimplificadoDto(final Game entidade) {
+        id = entidade.getId();
+        title = entidade.getTitle();
+        year = entidade.getYear();
+        imgUrl = entidade.getImgUrl();
+        shortDescription = entidade.getShortDescription();
+    }
+
+    public GameSimplificadoDto(final GameMinProjection entidade) {
         id = entidade.getId();
         title = entidade.getTitle();
         year = entidade.getYear();
