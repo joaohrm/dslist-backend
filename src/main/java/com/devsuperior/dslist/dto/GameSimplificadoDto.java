@@ -25,7 +25,7 @@ public class GameSimplificadoDto {
     public GameSimplificadoDto(final GameMinProjection entidade) {
         id = entidade.getId();
         title = entidade.getTitle();
-        year = entidade.getYear();
+        year = entidade.getGameYear();
         imgUrl = entidade.getImgUrl();
         shortDescription = entidade.getShortDescription();
     }
